@@ -1,7 +1,12 @@
 import React from "react";
 import Head from "next/head";
+import Button from "../components/Button/button";
+import storeItems from "../data/storeItems.json";
+import useSetLocalStorage from "../hooks/useSetLocalStorage";
 
 export default function Home(): JSX.Element {
+  useSetLocalStorage("store", storeItems);
+
   return (
     <>
       <Head>
@@ -11,7 +16,8 @@ export default function Home(): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="">
-        <div>Hello world</div>
+        <div className="m-20">Hello world</div>
+        <Button />
       </main>
     </>
   );
