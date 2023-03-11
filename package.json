@@ -13,8 +13,11 @@
     "format": "prettier --write .",
     "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
     "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "concurrently 'npm:watch:*'",
+    "watch:storybook": "start-storybook -p 6006",
+    "watch:tailwind": "npx tailwindcss -i ./src/styles/tailwind-input.css -o ./src/styles/tailwind.css --watch",
+    "build-tailwind": "npx tailwindcss -i ./src/styles/tailwind-input.css -o ./src/styles/tailwind.css",
+    "build-storybook": "npm run build-tailwind && build-storybook"
   },
   "dependencies": {
     "@types/node": "18.15.0",
@@ -38,6 +41,7 @@
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^8.3.0",
+    "concurrently": "^7.6.0",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-config-standard-with-typescript": "^34.0.0",

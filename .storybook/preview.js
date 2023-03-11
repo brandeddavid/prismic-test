@@ -1,4 +1,5 @@
 import * as NextImage from "next/image";
+import "../src/styles/tailwind.css";
 
 // Allow Storybook to handle Next's <Image> component
 const OriginalNextImage = NextImage.default;

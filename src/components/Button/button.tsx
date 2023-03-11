@@ -6,7 +6,7 @@ interface ButtonProps {
 }
 
 const Button = ({ children, onClick }: ButtonProps): JSX.Element => (
-  <button className="bg-purple-200 p-10" onClick={onClick}>
+  <button className="bg-blue-200 p-10" onClick={onClick}>
     {children}
   </button>
 );
