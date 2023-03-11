@@ -12,7 +12,9 @@
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
     "format": "prettier --write .",
     "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@types/node": "18.15.0",
@@ -24,8 +26,18 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "autoprefixer": "^10.4.14",
+    "babel-loader": "^8.3.0",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-config-standard-with-typescript": "^34.0.0",
@@ -33,6 +45,7 @@
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-storybook": "^0.6.11",
     "husky": "^8.0.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
