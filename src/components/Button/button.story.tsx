@@ -2,6 +2,6 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import Button from "./button";
 
-storiesOf("Button", module)
+storiesOf("Components/Button", module)
   .addParameters({ component: Button })
   .add("default", () => <Button />);
