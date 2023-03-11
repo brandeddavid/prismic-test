@@ -4,4 +4,4 @@ import Button from "./button";
 
 storiesOf("Components/Button", module)
   .addParameters({ component: Button })
-  .add("default", () => <Button />);
+  .add("default", () => <Button>Hello</Button>);

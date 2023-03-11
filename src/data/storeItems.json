@@ -1,17 +1,23 @@
 [
   {
+    "id": 1,
     "name": "A",
     "quantity": 10,
-    "price": 5
+    "price": 5,
+    "productImage": "https://flowbite.com/docs/images/products/apple-watch.png"
   },
   {
+    "id": 2,
     "name": "B",
     "quantity": 20,
-    "price": 7
+    "price": 7,
+    "productImage": "https://flowbite.com/docs/images/products/apple-watch.png"
   },
   {
-    "name": "B",
+    "id": 3,
+    "name": "C",
     "quantity": 20,
-    "price": 7
+    "price": 7,
+    "productImage": "https://flowbite.com/docs/images/products/apple-watch.png"
   }
 ]

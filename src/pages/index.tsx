@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import Button from "../components/Button/button";
 
 export default function Home(): JSX.Element {
   return (
@@ -11,9 +10,7 @@ export default function Home(): JSX.Element {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="">
-        <Button />
-      </main>
+      <main className="text-3xl font-bold underline m-5">Home page</main>
     </>
   );
 }
