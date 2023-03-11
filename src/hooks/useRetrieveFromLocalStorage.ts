@@ -4,10 +4,10 @@ const useRetrieveFromLocalStorage = (key: string): any => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    const items = JSON.parse(localStorage.getItem(key));
+    const items: string | null = localStorage.getItem(key);
 
-    if (items.length > 0) {
-      setData(items);
+    if (items !== null) {
+      setData(JSON.parse(items));
     }
   }, []);
 
