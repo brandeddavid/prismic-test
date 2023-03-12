@@ -1,22 +1,17 @@
 import { useEffect, useState } from "react";
 
 const useRetrieveFromLocalStorage = (key: string): any => {
-  const [so, setSo] = useState([]);
-  let data: any = [];
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const items: string | null = localStorage.getItem(key);
 
-    console.log({ items });
-
     if (items !== null) {
-      data = [...JSON.parse(items)];
-
-      setSo(data);
+      setData(JSON.parse(items));
     }
   }, []);
 
-  return [so, setSo];
+  return [data, setData];
 };
 
 export default useRetrieveFromLocalStorage;

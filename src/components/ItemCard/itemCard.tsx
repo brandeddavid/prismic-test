@@ -1,27 +1,24 @@
 import React from "react";
 import Button from "../Button/button";
-import useRetrieveFromLocalStorage from "../../hooks/useRetrieveFromLocalStorage";
 import { type Product } from "../../types";
-
-// TODO remove optionals
 interface ItemCardProps {
   item: Product;
   className?: string;
+  cartItems: Product[];
+  addItemToCart: any;
+  addToCartButtonDisabled: boolean;
 }
 
-const ItemCard = ({ item, className }: ItemCardProps): JSX.Element => {
+const ItemCard = ({
+  item,
+  className,
+  cartItems,
+  addItemToCart,
+  addToCartButtonDisabled,
+}: ItemCardProps): JSX.Element => {
   const { id, name, price, productImage, description } = item;
-  const [cartItems, setCartItems] = useRetrieveFromLocalStorage("cart");
   const itemInCart = cartItems.find((item: Product) => item.id === id);
-  console.log({ cartItems });
-  const addItemToCart = (item: Product): void => {
-    const neww = [...cartItems];
-    const { quantity } = item;
-    item.quantity = quantity - 1;
-    console.log("Adding", item);
-    neww.push(item);
-    setCartItems([...cartItems, item]);
-  };
+
   const getItemCartCount = (id: number): number =>
     cartItems.filter((item: Product) => item.id === id).length;
 
@@ -45,14 +42,14 @@ const ItemCard = ({ item, className }: ItemCardProps): JSX.Element => {
         <div className="flex items-center justify-between">
           <span className="text-3xl font-bold text-gray-900">{`$${price}`}</span>
           {itemInCart !== undefined ? (
-            <div className="flex justify-center">
+            <div className="flex justify-center items-center">
               <Button>-</Button>
               <div className="w-10 text-center">{getItemCartCount(id)}</div>
               <Button
                 onClick={() => {
                   addItemToCart(item);
                 }}
-                disabled
+                disabled={addToCartButtonDisabled}
               >
                 +
               </Button>
@@ -62,6 +59,7 @@ const ItemCard = ({ item, className }: ItemCardProps): JSX.Element => {
               onClick={() => {
                 addItemToCart(item);
               }}
+              disabled={addToCartButtonDisabled}
             >
               Add to cart
             </Button>

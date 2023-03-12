@@ -5,7 +5,19 @@ import { type Product } from "../types";
 import ItemCard from "../components/ItemCard/itemCard";
 
 const Store = (): JSX.Element => {
-  const [storeItems] = useRetrieveFromLocalStorage("store");
+  const [storeItems, setStoreItems] = useRetrieveFromLocalStorage("store");
+  const [cartItems, setCartItems] = useRetrieveFromLocalStorage("cart");
+
+  const addItemToCart = (item: Product): void => {
+    const storeItemsCopy = [...storeItems];
+    const storeItemToUpdate = storeItemsCopy.indexOf(item);
+    const { quantity } = storeItemsCopy[storeItemToUpdate];
+
+    storeItemsCopy[storeItemToUpdate].quantity = quantity - 1;
+
+    setStoreItems(storeItemsCopy);
+    setCartItems([...cartItems, item]);
+  };
 
   return (
     <>
@@ -16,7 +28,16 @@ const Store = (): JSX.Element => {
       {storeItems && storeItems.length > 0 && (
         <div className="flex flex-col items-center mx-5">
           {storeItems.map((item: Product) => {
-            return <ItemCard className="my-5" item={item} key={item.id} />;
+            return (
+              <ItemCard
+                className="my-5"
+                item={item}
+                key={item.id}
+                cartItems={cartItems}
+                addItemToCart={addItemToCart}
+                addToCartButtonDisabled={item.quantity === 0}
+              />
+            );
           })}
         </div>
       )}
