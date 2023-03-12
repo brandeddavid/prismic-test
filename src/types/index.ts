@@ -7,6 +7,10 @@ export interface Product {
   description: string;
 }
 
+export interface CartItem extends Product {
+  totalInCart: number;
+}
+
 export interface PriceRule {
   productName: string;
   ruleQuantity: number;

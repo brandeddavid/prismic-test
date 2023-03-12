@@ -7,6 +7,7 @@ interface ItemCardProps {
   cartItems: Product[];
   addItemToCart: any;
   addToCartButtonDisabled: boolean;
+  totalInCart: any;
 }
 
 const ItemCard = ({
@@ -15,12 +16,10 @@ const ItemCard = ({
   cartItems,
   addItemToCart,
   addToCartButtonDisabled,
+  totalInCart,
 }: ItemCardProps): JSX.Element => {
   const { id, name, price, productImage, description } = item;
   const itemInCart = cartItems.find((item: Product) => item.id === id);
-
-  const getItemCartCount = (id: number): number =>
-    cartItems.filter((item: Product) => item.id === id).length;
 
   return (
     <div
@@ -44,7 +43,7 @@ const ItemCard = ({
           {itemInCart !== undefined ? (
             <div className="flex justify-center items-center">
               <Button>-</Button>
-              <div className="w-10 text-center">{getItemCartCount(id)}</div>
+              <div className="w-10 text-center">{totalInCart(id)}</div>
               <Button
                 onClick={() => {
                   addItemToCart(item);
