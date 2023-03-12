@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/restrict-plus-operands */
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import React, { useEffect } from "react";
 import useRetrieveFromLocalStorage from "../hooks/useRetrieveFromLocalStorage";
@@ -62,7 +61,6 @@ const Store = (): JSX.Element => {
                 item={item}
                 key={item.id}
                 addItemToCart={addItemToCart}
-                addToCartButtonDisabled={item.quantity === 0}
                 removeItemFromCart={removeItemFromCart}
               />
             );

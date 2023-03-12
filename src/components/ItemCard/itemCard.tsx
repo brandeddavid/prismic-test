@@ -5,7 +5,6 @@ interface ItemCardProps {
   item: Product;
   className?: string;
   addItemToCart: (item: Product) => void;
-  addToCartButtonDisabled: boolean;
   removeItemFromCart: (item: Product) => void;
 }
 
@@ -13,10 +12,10 @@ const ItemCard = ({
   item,
   className,
   addItemToCart,
-  addToCartButtonDisabled,
   removeItemFromCart,
 }: ItemCardProps): JSX.Element => {
-  const { name, price, productImage, description, totalInCart } = item;
+  const { name, price, productImage, description, totalInCart, quantity } =
+    item;
 
   return (
     <div
@@ -51,7 +50,7 @@ const ItemCard = ({
                 onClick={() => {
                   addItemToCart(item);
                 }}
-                disabled={addToCartButtonDisabled}
+                disabled={quantity === 0}
               >
                 +
               </Button>
@@ -61,7 +60,7 @@ const ItemCard = ({
               onClick={() => {
                 addItemToCart(item);
               }}
-              disabled={addToCartButtonDisabled}
+              disabled={quantity === 0}
             >
               Add to cart
             </Button>
