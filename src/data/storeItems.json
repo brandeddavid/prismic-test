@@ -4,6 +4,7 @@
     "name": "A",
     "quantity": 10,
     "price": 5,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate, nibh a scelerisque elementum, tellus augue tristique odio, in ultrices tortor ante nec nunc. Vestibulum in ante purus. Fusce id tincidunt ante, at bibendum erat. Donec sed odio eros. Ut posuere quam turpis, a porta leo finibus at.",
     "productImage": "https://flowbite.com/docs/images/products/apple-watch.png"
   },
   {
@@ -11,6 +12,7 @@
     "name": "B",
     "quantity": 20,
     "price": 7,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate, nibh a scelerisque elementum, tellus augue tristique odio, in ultrices tortor ante nec nunc. Vestibulum in ante purus. Fusce id tincidunt ante, at bibendum erat. Donec sed odio eros. Ut posuere quam turpis, a porta leo finibus at.",
     "productImage": "https://flowbite.com/docs/images/products/apple-watch.png"
   },
   {
@@ -18,6 +20,7 @@
     "name": "C",
     "quantity": 20,
     "price": 7,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate, nibh a scelerisque elementum, tellus augue tristique odio, in ultrices tortor ante nec nunc. Vestibulum in ante purus. Fusce id tincidunt ante, at bibendum erat. Donec sed odio eros. Ut posuere quam turpis, a porta leo finibus at.",
     "productImage": "https://flowbite.com/docs/images/products/apple-watch.png"
   }
 ]

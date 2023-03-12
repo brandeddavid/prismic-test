@@ -7,6 +7,7 @@ import storeItems from "../data/storeItems.json";
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
   useSetLocalStorage("store", storeItems);
+  useSetLocalStorage("cart", []);
 
   return (
     <>
