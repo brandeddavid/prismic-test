@@ -4,22 +4,19 @@ import { type Product } from "../../types";
 interface ItemCardProps {
   item: Product;
   className?: string;
-  cartItems: Product[];
-  addItemToCart: any;
+  addItemToCart: (item: Product) => void;
   addToCartButtonDisabled: boolean;
-  totalInCart: any;
+  removeItemFromCart: (item: Product) => void;
 }
 
 const ItemCard = ({
   item,
   className,
-  cartItems,
   addItemToCart,
   addToCartButtonDisabled,
-  totalInCart,
+  removeItemFromCart,
 }: ItemCardProps): JSX.Element => {
-  const { id, name, price, productImage, description } = item;
-  const itemInCart = cartItems.find((item: Product) => item.id === id);
+  const { name, price, productImage, description, totalInCart } = item;
 
   return (
     <div
@@ -40,10 +37,16 @@ const ItemCard = ({
 
         <div className="flex items-center justify-between">
           <span className="text-3xl font-bold text-gray-900">{`$${price}`}</span>
-          {itemInCart !== undefined ? (
+          {totalInCart > 0 ? (
             <div className="flex justify-center items-center">
-              <Button>-</Button>
-              <div className="w-10 text-center">{totalInCart(id)}</div>
+              <Button
+                onClick={() => {
+                  removeItemFromCart(item);
+                }}
+              >
+                -
+              </Button>
+              <div className="w-10 text-center">{totalInCart}</div>
               <Button
                 onClick={() => {
                   addItemToCart(item);
