@@ -19,6 +19,17 @@ const Store = (): JSX.Element => {
     setCartItems([...cartItems, item]);
   };
 
+  const removeItemFromCart = (item: Product): void => {
+    const storeItemsCopy = [...storeItems];
+    const storeItemToUpdate = storeItemsCopy.indexOf(item);
+    const { quantity } = storeItemsCopy[storeItemToUpdate];
+
+    storeItemsCopy[storeItemToUpdate].quantity = quantity + 1;
+
+    setStoreItems(storeItemsCopy);
+    setCartItems([...cartItems, item]);
+  };
+
   return (
     <>
       <div className="text-3xl font-bold m-5">Store</div>
