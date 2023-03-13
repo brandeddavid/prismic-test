@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/restrict-plus-operands */
 import React, { Fragment, useContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { type Product } from "../../types";
 import { StoreContext } from "../../context/storeContext";
+import calculateCartTotal from "../../helpers/calculateCartTotal";
 interface CartDialogueProps {
   show: boolean;
   setOpen: (option: boolean) => void;
@@ -14,6 +16,12 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
   const itemsInCart = storeItems.filter(
     (storeItem: Product) => storeItem.totalInCart > 0
   );
+
+  const cartTotal = itemsInCart.reduce((acc: number, item: Product) => {
+    const cartTotal: number = calculateCartTotal(item);
+
+    return acc + cartTotal;
+  }, 0);
 
   return (
     <>
@@ -46,7 +54,7 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
                   <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
                     <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                       <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
-                        <div className="flex items-start justify-between">
+                        <div className="flex items-start justify-between border-b-2 pb-8 pt-3">
                           <Dialog.Title className="text-lg font-medium text-gray-900">
                             Shopping cart
                           </Dialog.Title>
@@ -87,7 +95,9 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
                                     <div>
                                       <div className="flex justify-between text-base font-medium text-gray-900">
                                         <h3>{item.name}</h3>
-                                        <p className="ml-4">{item.price}</p>
+                                        <p className="ml-4">
+                                          ${calculateCartTotal(item)}
+                                        </p>
                                       </div>
                                     </div>
                                     <div className="flex flex-1 items-end justify-between text-sm">
@@ -98,7 +108,7 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
                                       <div className="flex">
                                         <button
                                           type="button"
-                                          className="font-medium text-indigo-600 hover:text-indigo-500"
+                                          className="font-medium text-gray-900 hover:text-gray-600 underline"
                                         >
                                           Remove
                                         </button>
@@ -115,7 +125,7 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
                       <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                         <div className="flex justify-between text-base font-medium text-gray-900">
                           <p>Subtotal</p>
-                          <p>$262.00</p>
+                          <p>${cartTotal}</p>
                         </div>
                         <p className="mt-0.5 text-sm text-gray-500">
                           Shipping and taxes calculated at checkout.
@@ -123,17 +133,17 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
                         <div className="mt-6">
                           <a
                             href="#"
-                            className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                            className="flex items-center justify-center rounded-md border border-transparent bg-gray-900 hover:bg-gray-600 px-6 py-3 text-base font-medium text-white shadow-sm"
                           >
                             Checkout
                           </a>
                         </div>
                         <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                           <p>
-                            or
+                            or{" "}
                             <button
                               type="button"
-                              className="font-medium text-indigo-600 hover:text-indigo-500"
+                              className="font-medium underline text-gray-900 hover:text-gray-600"
                               onClick={() => {
                                 setOpen(false);
                               }}

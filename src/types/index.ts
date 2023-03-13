@@ -6,6 +6,7 @@ export interface Product {
   productImage: string;
   description: string;
   totalInCart: number;
+  totalCartPrice: number;
 }
 
 export interface PriceRule {
