@@ -1,13 +1,14 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import React, { useContext } from "react";
-import { type Product, type PriceRule } from "../types";
+import { type Product } from "../types";
 import ItemCard from "../components/ItemCard/itemCard";
 import { StoreContext } from "../context/storeContext";
 import { PricingRulesContext } from "../context/pricingRulesContext";
+import getProductDiscount from "../helpers/getProductDiscount";
 
 const Store = (): JSX.Element => {
   const { storeItems, setStoreItems } = useContext(StoreContext);
-  const { pricingRules, setPricingRules } = useContext(PricingRulesContext);
+  const { pricingRules } = useContext(PricingRulesContext);
 
   const addItemToCart = (item: Product): void => {
     // Update product quantity and store count in the store items array
@@ -47,9 +48,6 @@ const Store = (): JSX.Element => {
     pricingRules.filter((pricingRule) => pricingRule.productId === id).length >
     0;
 
-  const getProductDiscount = (id: number): PriceRule | null =>
-    pricingRules.find((pricingRule) => pricingRule.productId === id) ?? null;
-
   return (
     <>
       <div className="text-3xl font-bold m-5">Store</div>
@@ -69,7 +67,7 @@ const Store = (): JSX.Element => {
                 addItemToCart={addItemToCart}
                 removeItemFromCart={removeItemFromCart}
                 isDiscounted={isDiscounted}
-                productDiscount={getProductDiscount(item.id)}
+                productDiscount={getProductDiscount(item.id, pricingRules)}
               />
             );
           })}

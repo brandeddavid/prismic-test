@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Button/button";
 import { type Product, type PriceRule } from "../../types";
+
 interface ItemCardProps {
   item: Product;
   className?: string;

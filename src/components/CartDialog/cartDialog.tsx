@@ -4,6 +4,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { type Product } from "../../types";
 import { StoreContext } from "../../context/storeContext";
+import { PricingRulesContext } from "../../context/pricingRulesContext";
 import calculateCartTotal from "../../helpers/calculateCartTotal";
 import Button from "../Button/button";
 
@@ -14,13 +15,14 @@ interface CartDialogueProps {
 
 const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
   const { storeItems, setStoreItems } = useContext(StoreContext);
+  const { pricingRules } = useContext(PricingRulesContext);
 
   const itemsInCart = storeItems.filter(
     (storeItem: Product) => storeItem.totalInCart > 0
   );
 
   const cartTotal = itemsInCart.reduce((acc: number, item: Product) => {
-    const cartTotal: number = calculateCartTotal(item);
+    const cartTotal: number = calculateCartTotal(item, pricingRules);
 
     return acc + cartTotal;
   }, 0);
@@ -119,7 +121,11 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
                                       <div className="flex justify-between text-base font-medium text-gray-900">
                                         <h3>{item.name}</h3>
                                         <p className="ml-4">
-                                          ${calculateCartTotal(item)}
+                                          $
+                                          {calculateCartTotal(
+                                            item,
+                                            pricingRules
+                                          )}
                                         </p>
                                       </div>
                                     </div>
