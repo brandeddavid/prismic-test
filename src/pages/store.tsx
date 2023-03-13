@@ -3,9 +3,11 @@ import React, { useContext } from "react";
 import { type Product } from "../types";
 import ItemCard from "../components/ItemCard/itemCard";
 import { StoreContext } from "../context/storeContext";
+import { PricingRulesContext } from "@/context/pricingRulesContext";
 
 const Store = (): JSX.Element => {
   const { storeItems, setStoreItems } = useContext(StoreContext);
+  const { pricingRules, setPricingRules } = useContext(PricingRulesContext);
 
   const addItemToCart = (item: Product): void => {
     // Update product quantity and store count in the store items array
@@ -57,6 +59,7 @@ const Store = (): JSX.Element => {
                 key={item.id}
                 addItemToCart={addItemToCart}
                 removeItemFromCart={removeItemFromCart}
+                isDiscounted
               />
             );
           })}

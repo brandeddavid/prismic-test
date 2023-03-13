@@ -5,7 +5,7 @@
     "quantity": 10,
     "price": 50,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate, nibh a scelerisque elementum, tellus augue tristique odio, in ultrices tortor ante nec nunc. Vestibulum in ante purus. Fusce id tincidunt ante, at bibendum erat. Donec sed odio eros. Ut posuere quam turpis, a porta leo finibus at.",
-    "productImage": "https://flowbite.com/docs/images/products/apple-watch.png",
+    "productImage": "https://images.pexels.com/photos/3819969/pexels-photo-3819969.jpeg?cs=tinysrgb&w=1600",
     "totalInCart": 0
   },
   {
@@ -14,7 +14,7 @@
     "quantity": 15,
     "price": 30,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate, nibh a scelerisque elementum, tellus augue tristique odio, in ultrices tortor ante nec nunc. Vestibulum in ante purus. Fusce id tincidunt ante, at bibendum erat. Donec sed odio eros. Ut posuere quam turpis, a porta leo finibus at.",
-    "productImage": "https://flowbite.com/docs/images/products/apple-watch.png",
+    "productImage": "https://plus.unsplash.com/premium_photo-1673969608352-ec2d84279614?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "totalInCart": 0
   },
   {
@@ -23,7 +23,7 @@
     "quantity": 20,
     "price": 20,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate, nibh a scelerisque elementum, tellus augue tristique odio, in ultrices tortor ante nec nunc. Vestibulum in ante purus. Fusce id tincidunt ante, at bibendum erat. Donec sed odio eros. Ut posuere quam turpis, a porta leo finibus at.",
-    "productImage": "https://flowbite.com/docs/images/products/apple-watch.png",
+    "productImage": "https://images.unsplash.com/photo-1486946255434-2466348c2166?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "totalInCart": 0
   },
   {
@@ -32,7 +32,7 @@
     "quantity": 15,
     "price": 15,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate, nibh a scelerisque elementum, tellus augue tristique odio, in ultrices tortor ante nec nunc. Vestibulum in ante purus. Fusce id tincidunt ante, at bibendum erat. Donec sed odio eros. Ut posuere quam turpis, a porta leo finibus at.",
-    "productImage": "https://flowbite.com/docs/images/products/apple-watch.png",
+    "productImage": "https://images.unsplash.com/photo-1541533260371-b8fc9b596d84?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "totalInCart": 0
   },
   {
@@ -41,7 +41,7 @@
     "quantity": 12,
     "price": 100,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate, nibh a scelerisque elementum, tellus augue tristique odio, in ultrices tortor ante nec nunc. Vestibulum in ante purus. Fusce id tincidunt ante, at bibendum erat. Donec sed odio eros. Ut posuere quam turpis, a porta leo finibus at.",
-    "productImage": "https://flowbite.com/docs/images/products/apple-watch.png",
+    "productImage": "https://images.unsplash.com/photo-1567225477277-c8162eb4991d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "totalInCart": 0
   }
 ]

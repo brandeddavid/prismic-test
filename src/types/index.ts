@@ -9,6 +9,7 @@ export interface Product {
 }
 
 export interface PriceRule {
+  productId: number;
   productName: string;
   ruleQuantity: number;
   rulePrice: number;
@@ -16,4 +17,3 @@ export interface PriceRule {
 
 export type Products = Product[];
 export type PriceRules = PriceRule[];
-export type ProductCount = Record<string, number>;

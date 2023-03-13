@@ -6,6 +6,7 @@ interface ItemCardProps {
   className?: string;
   addItemToCart: (item: Product) => void;
   removeItemFromCart: (item: Product) => void;
+  isDiscounted: boolean;
 }
 
 const ItemCard = ({
@@ -13,6 +14,7 @@ const ItemCard = ({
   className,
   addItemToCart,
   removeItemFromCart,
+  isDiscounted,
 }: ItemCardProps): JSX.Element => {
   const { name, price, productImage, description, totalInCart, quantity } =
     item;
@@ -24,15 +26,19 @@ const ItemCard = ({
       }`}
     >
       <img
-        className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+        className="object-cover w-full mr-5 rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
         src={productImage}
         alt=""
       />
-      <div className="flex flex-col justify-between p-4 leading-normal">
+      <div className="flex flex-col justify-between leading-normal mr-5">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
           {name}
         </h5>
-        <p className="mb-3 font-normal text-gray-700">{description}</p>
+        <div className="">
+          <p className="mb-3 font-normal text-gray-700 whitespace-normal max-h-30 text-ellipsis truncate max-w-10">
+            {description}
+          </p>
+        </div>
 
         <div className="flex items-center justify-between">
           <span className="text-3xl font-bold text-gray-900">{`$${price}`}</span>
@@ -66,6 +72,7 @@ const ItemCard = ({
             </Button>
           )}
         </div>
+        {isDiscounted && <p className="text-red-400 text-sm">Buy 3 for $150</p>}
       </div>
     </div>
   );
@@ -73,6 +80,7 @@ const ItemCard = ({
 
 ItemCard.defaultProps = {
   className: "",
+  isDisCounted: false,
 };
 
 export default ItemCard;

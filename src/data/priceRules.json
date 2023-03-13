@@ -1,0 +1,8 @@
+[
+  {
+    "productId": 1,
+    "productName": "Product A",
+    "ruleQuantity": 2,
+    "discountedPrice": 150
+  }
+]

@@ -1,5 +1,5 @@
 import React, { useEffect, createContext } from "react";
-import useRetrieveFromLocalStorage from "@/hooks/useRetrieveFromLocalStorage";
+import useRetrieveFromLocalStorage from "../hooks/useRetrieveFromLocalStorage";
 import { type Products } from "../types";
 
 interface StoreProviderProps {
