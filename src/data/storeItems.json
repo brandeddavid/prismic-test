@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Product A",
     "quantity": 10,
-    "price": 5,
+    "price": 50,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate, nibh a scelerisque elementum, tellus augue tristique odio, in ultrices tortor ante nec nunc. Vestibulum in ante purus. Fusce id tincidunt ante, at bibendum erat. Donec sed odio eros. Ut posuere quam turpis, a porta leo finibus at.",
     "productImage": "https://flowbite.com/docs/images/products/apple-watch.png",
     "totalInCart": 0
@@ -12,7 +12,7 @@
     "id": 2,
     "name": "Product B",
     "quantity": 15,
-    "price": 7,
+    "price": 30,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate, nibh a scelerisque elementum, tellus augue tristique odio, in ultrices tortor ante nec nunc. Vestibulum in ante purus. Fusce id tincidunt ante, at bibendum erat. Donec sed odio eros. Ut posuere quam turpis, a porta leo finibus at.",
     "productImage": "https://flowbite.com/docs/images/products/apple-watch.png",
     "totalInCart": 0
@@ -21,7 +21,7 @@
     "id": 3,
     "name": "Product C",
     "quantity": 20,
-    "price": 7,
+    "price": 20,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate, nibh a scelerisque elementum, tellus augue tristique odio, in ultrices tortor ante nec nunc. Vestibulum in ante purus. Fusce id tincidunt ante, at bibendum erat. Donec sed odio eros. Ut posuere quam turpis, a porta leo finibus at.",
     "productImage": "https://flowbite.com/docs/images/products/apple-watch.png",
     "totalInCart": 0
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "name": "Product D",
-    "quantity": 25,
+    "quantity": 15,
     "price": 7,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate, nibh a scelerisque elementum, tellus augue tristique odio, in ultrices tortor ante nec nunc. Vestibulum in ante purus. Fusce id tincidunt ante, at bibendum erat. Donec sed odio eros. Ut posuere quam turpis, a porta leo finibus at.",
     "productImage": "https://flowbite.com/docs/images/products/apple-watch.png",
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "name": "Product E",
-    "quantity": 30,
+    "quantity": 100,
     "price": 7,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vulputate, nibh a scelerisque elementum, tellus augue tristique odio, in ultrices tortor ante nec nunc. Vestibulum in ante purus. Fusce id tincidunt ante, at bibendum erat. Donec sed odio eros. Ut posuere quam turpis, a porta leo finibus at.",
     "productImage": "https://flowbite.com/docs/images/products/apple-watch.png",

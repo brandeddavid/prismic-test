@@ -1,21 +1,15 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import useRetrieveFromLocalStorage from "@/hooks/useRetrieveFromLocalStorage";
 import { type Product } from "../../types";
-
+import { StoreContext } from "../../context/storeContext";
 interface CartDialogueProps {
   show: boolean;
   setOpen: (option: boolean) => void;
 }
 
 const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
-  const [storeItems, setStoreItems] = useRetrieveFromLocalStorage("store");
-
-  useEffect(() => {
-    const store = localStorage.getItem("store");
-    console.log({ store, storeItems });
-  }, []);
+  const [storeItems] = useContext(StoreContext);
 
   const itemsInCart = storeItems.filter(
     (storeItem: Product) => storeItem.totalInCart > 0

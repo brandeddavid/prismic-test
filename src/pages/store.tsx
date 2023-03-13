@@ -1,16 +1,11 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-import React, { useEffect } from "react";
-import useRetrieveFromLocalStorage from "../hooks/useRetrieveFromLocalStorage";
+import React, { useContext } from "react";
 import { type Product } from "../types";
 import ItemCard from "../components/ItemCard/itemCard";
+import { StoreContext } from "../context/storeContext";
 
 const Store = (): JSX.Element => {
-  const [storeItems, setStoreItems] = useRetrieveFromLocalStorage("store");
-
-  useEffect(() => {
-    if (storeItems.length > 0)
-      localStorage.setItem("store", JSON.stringify(storeItems));
-  }, [storeItems]);
+  const [storeItems, setStoreItems] = useContext(StoreContext);
 
   const addItemToCart = (item: Product): void => {
     // Update product quantity and store count in the store items array

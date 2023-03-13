@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Link from "next/link";
 import CartCount from "../CartCount/cartCount";
 import CartDialog from "../CartDialog/cartDialog";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
-import useRetrieveFromLocalStorage from "@/hooks/useRetrieveFromLocalStorage";
 import { type Product } from "../../types";
+import { StoreContext } from "../../context/storeContext";
 
 const NavBar = (): JSX.Element => {
   const [open, setOpen] = useState(false);
-  const [store] = useRetrieveFromLocalStorage("store");
-  const itemsInCart = store.filter(
+  const [storeItems] = useContext(StoreContext);
+  const itemsInCart = storeItems.filter(
     (storeItem: Product) => storeItem.totalInCart > 0
   ).length;
 
