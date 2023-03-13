@@ -55,7 +55,7 @@ const Store = (): JSX.Element => {
         <div className="text-red-500 font-bold m-5">No store products</div>
       )}
       {storeItems && storeItems.length > 0 && (
-        <div className="flex flex-col items-center mx-5">
+        <div className="flex flex-wrap justify-center items-center mx-20 md:flex-row md:justify-center xl:flex-row xl:flex-wrap xl:justify-between">
           {storeItems.map((item: Product) => {
             const isDiscounted = checkDiscountedItem(item.id);
 
