@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import React, { useContext } from "react";
-import { type Product } from "../types";
+import { type Product, type PriceRule } from "../types";
 import ItemCard from "../components/ItemCard/itemCard";
 import { StoreContext } from "../context/storeContext";
-import { PricingRulesContext } from "@/context/pricingRulesContext";
+import { PricingRulesContext } from "../context/pricingRulesContext";
 
 const Store = (): JSX.Element => {
   const { storeItems, setStoreItems } = useContext(StoreContext);
@@ -43,6 +43,13 @@ const Store = (): JSX.Element => {
     setStoreItems(updatedStoreItems);
   };
 
+  const checkDiscountedItem = (id: number): boolean =>
+    pricingRules.filter((pricingRule) => pricingRule.productId === id).length >
+    0;
+
+  const getProductDiscount = (id: number): PriceRule | null =>
+    pricingRules.find((pricingRule) => pricingRule.productId === id) ?? null;
+
   return (
     <>
       <div className="text-3xl font-bold m-5">Store</div>
@@ -52,6 +59,8 @@ const Store = (): JSX.Element => {
       {storeItems && storeItems.length > 0 && (
         <div className="flex flex-col items-center mx-5">
           {storeItems.map((item: Product) => {
+            const isDiscounted = checkDiscountedItem(item.id);
+
             return (
               <ItemCard
                 className="my-5"
@@ -59,7 +68,8 @@ const Store = (): JSX.Element => {
                 key={item.id}
                 addItemToCart={addItemToCart}
                 removeItemFromCart={removeItemFromCart}
-                isDiscounted
+                isDiscounted={isDiscounted}
+                productDiscount={getProductDiscount(item.id)}
               />
             );
           })}

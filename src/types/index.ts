@@ -12,7 +12,7 @@ export interface PriceRule {
   productId: number;
   productName: string;
   ruleQuantity: number;
-  rulePrice: number;
+  discountedPrice: number;
 }
 
 export type Products = Product[];

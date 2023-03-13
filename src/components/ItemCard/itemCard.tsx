@@ -1,12 +1,13 @@
 import React from "react";
 import Button from "../Button/button";
-import { type Product } from "../../types";
+import { type Product, type PriceRule } from "../../types";
 interface ItemCardProps {
   item: Product;
   className?: string;
   addItemToCart: (item: Product) => void;
   removeItemFromCart: (item: Product) => void;
   isDiscounted: boolean;
+  productDiscount?: PriceRule | null;
 }
 
 const ItemCard = ({
@@ -15,6 +16,7 @@ const ItemCard = ({
   addItemToCart,
   removeItemFromCart,
   isDiscounted,
+  productDiscount,
 }: ItemCardProps): JSX.Element => {
   const { name, price, productImage, description, totalInCart, quantity } =
     item;
@@ -72,7 +74,11 @@ const ItemCard = ({
             </Button>
           )}
         </div>
-        {isDiscounted && <p className="text-red-400 text-sm">Buy 3 for $150</p>}
+        {isDiscounted && (
+          <p className="text-red-400 text-sm">{`Buy ${
+            productDiscount?.ruleQuantity ?? ""
+          } for $${productDiscount?.discountedPrice ?? ""}`}</p>
+        )}
       </div>
     </div>
   );
@@ -81,6 +87,7 @@ const ItemCard = ({
 ItemCard.defaultProps = {
   className: "",
   isDisCounted: false,
+  productDiscount: null,
 };
 
 export default ItemCard;

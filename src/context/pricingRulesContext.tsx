@@ -19,7 +19,7 @@ export const PricingRulesContext = createContext<PricingRulesContextProps>({
 const PricingRulesProvider = ({
   children,
 }: PricingRulesProviderProps): JSX.Element => {
-  const [pricingRules, setPricingRules] = useRetrieveFromLocalStorage("store");
+  const [pricingRules, setPricingRules] = useRetrieveFromLocalStorage("pricingRules");
 
   useEffect(() => {
     if (pricingRules.length > 0)

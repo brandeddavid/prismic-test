@@ -2,7 +2,7 @@
   {
     "productId": 1,
     "productName": "Product A",
-    "ruleQuantity": 2,
-    "discountedPrice": 150
+    "ruleQuantity": 3,
+    "discountedPrice": 130
   }
 ]
