@@ -120,11 +120,13 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
                                       <div className="flex justify-between text-base font-medium text-gray-900">
                                         <h3>{item.name}</h3>
                                         <p className="ml-4">
-                                          $
-                                          {calculateCartTotal(
-                                            item,
-                                            pricingRules
-                                          )}
+                                          <>
+                                            $
+                                            {calculateCartTotal(
+                                              item,
+                                              pricingRules
+                                            )}
+                                          </>
                                         </p>
                                       </div>
                                     </div>

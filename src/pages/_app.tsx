@@ -15,14 +15,14 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 
   return (
     <StoreProvider>
-      <>
-        <div className="sticky top-0">
-          <NavBar />
-        </div>
-        <PricingRulesProvider>
+      <PricingRulesProvider>
+        <>
+          <div className="sticky top-0">
+            <NavBar />
+          </div>
           <Component {...pageProps} />
-        </PricingRulesProvider>
-      </>
+        </>
+      </PricingRulesProvider>
     </StoreProvider>
   );
 }
