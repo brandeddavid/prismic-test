@@ -163,20 +163,6 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
                             Checkout
                           </Button>
                         </div>
-                        <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
-                          <p>
-                            or{" "}
-                            <Button
-                              type="link-button"
-                              onClick={() => {
-                                setOpen(false);
-                              }}
-                            >
-                              Continue Shopping
-                              <span aria-hidden="true"> &rarr;</span>
-                            </Button>
-                          </p>
-                        </div>
                       </div>
                     </div>
                   </Dialog.Panel>
