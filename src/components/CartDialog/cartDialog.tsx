@@ -80,7 +80,6 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
                           </Dialog.Title>
                           <div className="ml-3 flex h-7 items-center">
                             <button
-                              type="button"
                               className="-m-2 p-2 text-gray-400 hover:text-gray-500"
                               onClick={() => {
                                 setOpen(false);
@@ -136,7 +135,7 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
 
                                       <div className="flex">
                                         <Button
-                                          type="link-button"
+                                          cssClass="link-button"
                                           onClick={() => {
                                             removeFromCart(item);
                                           }}
@@ -163,7 +162,7 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
                         </p>
                         <div className="mt-6">
                           <Button
-                            type="large"
+                            cssClass="large"
                             disabled={itemsInCart.length === 0}
                           >
                             Checkout

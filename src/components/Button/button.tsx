@@ -4,13 +4,14 @@ interface ButtonProps {
   children: any;
   onClick?: () => void;
   disabled?: boolean;
-  type: string;
+  type: "button" | "submit" | "reset" | undefined;
+  cssClass: string;
 }
 
-const getButtonClassName = (type: string): string => {
+const getButtonClassName = (cssClass: string): string => {
   let className: string;
 
-  switch (type) {
+  switch (cssClass) {
     case "primary":
       className =
         "text-white bg-gray-900 hover:bg-gray-600 disabled:bg-gray-200 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center";
@@ -35,11 +36,13 @@ const Button = ({
   onClick,
   disabled,
   type,
+  cssClass,
 }: ButtonProps): JSX.Element => (
   <button
-    className={getButtonClassName(type)}
+    className={getButtonClassName(cssClass)}
     onClick={onClick}
     disabled={disabled}
+    type={type}
   >
     {children}
   </button>
@@ -48,7 +51,8 @@ const Button = ({
 Button.defaultProps = {
   onClick: () => {},
   disabled: false,
-  type: "primary",
+  cssClass: "primary",
+  type: "button",
 };
 
 export default Button;

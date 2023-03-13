@@ -1,6 +1,6 @@
 import React, { useEffect, createContext } from "react";
 import useRetrieveFromLocalStorage from "../hooks/useRetrieveFromLocalStorage";
-import { type PriceRules, type PriceRule } from "../types";
+import { type PriceRules } from "../types";
 
 interface PricingRulesProviderProps {
   children: JSX.Element;
@@ -8,7 +8,7 @@ interface PricingRulesProviderProps {
 
 interface PricingRulesContextProps {
   pricingRules: PriceRules;
-  setPricingRules: (item: PriceRule) => void;
+  setPricingRules: (items: PriceRules) => void;
 }
 
 export const PricingRulesContext = createContext<PricingRulesContextProps>({
@@ -19,11 +19,11 @@ export const PricingRulesContext = createContext<PricingRulesContextProps>({
 const PricingRulesProvider = ({
   children,
 }: PricingRulesProviderProps): JSX.Element => {
-  const [pricingRules, setPricingRules] = useRetrieveFromLocalStorage("pricingRules");
+  const [pricingRules, setPricingRules] =
+    useRetrieveFromLocalStorage("pricingRules");
 
   useEffect(() => {
-    if (pricingRules.length > 0)
-      localStorage.setItem("pricingRules", JSON.stringify(pricingRules));
+    localStorage.setItem("pricingRules", JSON.stringify(pricingRules));
   }, [pricingRules]);
 
   return (
