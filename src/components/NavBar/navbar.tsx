@@ -8,7 +8,7 @@ import { StoreContext } from "../../context/storeContext";
 
 const NavBar = (): JSX.Element => {
   const [open, setOpen] = useState(false);
-  const [storeItems] = useContext(StoreContext);
+  const { storeItems } = useContext(StoreContext);
   const itemsInCart = storeItems.filter(
     (storeItem: Product) => storeItem.totalInCart > 0
   ).length;

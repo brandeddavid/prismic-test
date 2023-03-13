@@ -5,7 +5,7 @@ import ItemCard from "../components/ItemCard/itemCard";
 import { StoreContext } from "../context/storeContext";
 
 const Store = (): JSX.Element => {
-  const [storeItems, setStoreItems] = useContext(StoreContext);
+  const { storeItems, setStoreItems } = useContext(StoreContext);
 
   const addItemToCart = (item: Product): void => {
     // Update product quantity and store count in the store items array
@@ -21,7 +21,7 @@ const Store = (): JSX.Element => {
         : { ...storeItem };
     });
 
-    return setStoreItems(updatedStoreItems);
+    setStoreItems(updatedStoreItems);
   };
 
   const removeItemFromCart = (item: Product): void => {
@@ -38,7 +38,7 @@ const Store = (): JSX.Element => {
         : { ...storeItem };
     });
 
-    return setStoreItems(updatedStoreItems);
+    setStoreItems(updatedStoreItems);
   };
 
   return (

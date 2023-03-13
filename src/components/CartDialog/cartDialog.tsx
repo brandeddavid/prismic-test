@@ -5,13 +5,15 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { type Product } from "../../types";
 import { StoreContext } from "../../context/storeContext";
 import calculateCartTotal from "../../helpers/calculateCartTotal";
+import Button from "../Button/button";
+
 interface CartDialogueProps {
   show: boolean;
   setOpen: (option: boolean) => void;
 }
 
 const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
-  const [storeItems] = useContext(StoreContext);
+  const { storeItems, setStoreItems } = useContext(StoreContext);
 
   const itemsInCart = storeItems.filter(
     (storeItem: Product) => storeItem.totalInCart > 0
@@ -22,6 +24,22 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
 
     return acc + cartTotal;
   }, 0);
+
+  const removeFromCart = (item: Product): void => {
+    const storeItemsCopy = [...storeItems];
+
+    const updatedStoreItems = storeItemsCopy.map((storeItem: Product) => {
+      return storeItem.id === item.id
+        ? {
+            ...storeItem,
+            quantity: storeItem.quantity + storeItem.totalInCart,
+            totalInCart: 0,
+          }
+        : { ...storeItem };
+    });
+
+    setStoreItems(updatedStoreItems);
+  };
 
   return (
     <>
@@ -74,6 +92,11 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
                             </button>
                           </div>
                         </div>
+                        {itemsInCart.length === 0 && (
+                          <div className="text-red-500 font-bold m-5">
+                            No product(s) in cart
+                          </div>
+                        )}
 
                         <div className="mt-8">
                           <div className="flow-root">
@@ -106,12 +129,14 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
                                       </p>
 
                                       <div className="flex">
-                                        <button
-                                          type="button"
-                                          className="font-medium text-gray-900 hover:text-gray-600 underline"
+                                        <Button
+                                          type="link-button"
+                                          onClick={() => {
+                                            removeFromCart(item);
+                                          }}
                                         >
                                           Remove
-                                        </button>
+                                        </Button>
                                       </div>
                                     </div>
                                   </div>
@@ -131,26 +156,25 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
                           Shipping and taxes calculated at checkout.
                         </p>
                         <div className="mt-6">
-                          <a
-                            href="#"
-                            className="flex items-center justify-center rounded-md border border-transparent bg-gray-900 hover:bg-gray-600 px-6 py-3 text-base font-medium text-white shadow-sm"
+                          <Button
+                            type="large"
+                            disabled={itemsInCart.length === 0}
                           >
                             Checkout
-                          </a>
+                          </Button>
                         </div>
                         <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                           <p>
                             or{" "}
-                            <button
-                              type="button"
-                              className="font-medium underline text-gray-900 hover:text-gray-600"
+                            <Button
+                              type="link-button"
                               onClick={() => {
                                 setOpen(false);
                               }}
                             >
                               Continue Shopping
                               <span aria-hidden="true"> &rarr;</span>
-                            </button>
+                            </Button>
                           </p>
                         </div>
                       </div>

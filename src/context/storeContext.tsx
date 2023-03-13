@@ -1,11 +1,20 @@
 import React, { useEffect, createContext } from "react";
 import useRetrieveFromLocalStorage from "@/hooks/useRetrieveFromLocalStorage";
-
-export const StoreContext = createContext([]);
+import { type Products } from "../types";
 
 interface StoreProviderProps {
   children: JSX.Element;
 }
+
+interface StoreContextProps {
+  storeItems: Products;
+  setStoreItems: (item: Products) => void;
+}
+
+export const StoreContext = createContext<StoreContextProps>({
+  storeItems: [],
+  setStoreItems: () => {},
+});
 
 const StoreProvider = ({ children }: StoreProviderProps): JSX.Element => {
   const [storeItems, setStoreItems] = useRetrieveFromLocalStorage("store");
@@ -16,7 +25,7 @@ const StoreProvider = ({ children }: StoreProviderProps): JSX.Element => {
   }, [storeItems]);
 
   return (
-    <StoreContext.Provider value={[storeItems, setStoreItems]}>
+    <StoreContext.Provider value={{ storeItems, setStoreItems }}>
       {children}
     </StoreContext.Provider>
   );
