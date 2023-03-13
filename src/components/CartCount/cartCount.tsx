@@ -8,7 +8,7 @@ interface CartCountProps {
 const CartCount = ({ count, className }: CartCountProps): JSX.Element => {
   return (
     <div
-      className={`text-xs bg-pink-300 rounded-full w-4 justify-center text-center ${
+      className={`text-xs bg-gray-700 rounded-full w-4 justify-center text-center text-black-700  ${
         className ?? ""
       }`}
     >
