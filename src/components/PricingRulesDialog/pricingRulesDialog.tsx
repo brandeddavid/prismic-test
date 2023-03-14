@@ -60,6 +60,19 @@ const PricingRulesDialog = ({
     setOpen(false);
   };
 
+  const removePricingRule = (id: number): void => {
+    const pricingRulesCopy = [...pricingRules];
+
+    const updatedRules = pricingRulesCopy.filter(
+      (pricingRule) => pricingRule.productId !== id
+    );
+
+    setPricingRules(updatedRules);
+    setRuleQuantity("");
+    setDiscountedPrice("");
+    setOpen(false);
+  };
+
   useEffect(() => {
     if (pricingRule !== null) {
       setRuleQuantity(pricingRule?.ruleQuantity ?? 0);
@@ -162,6 +175,9 @@ const PricingRulesDialog = ({
                                 <Button
                                   cssClass="danger"
                                   disabled={pricingRule === null}
+                                  onClick={() => {
+                                    removePricingRule(productId);
+                                  }}
                                 >
                                   Remove
                                 </Button>
