@@ -6,4 +6,5 @@ storiesOf("Components/Button", module)
   .addParameters({ component: Button })
   .add("default", () => <Button>Hello</Button>)
   .add("link button", () => <Button cssClass="link-button">Hello</Button>)
-  .add("large", () => <Button cssClass="large">Hello</Button>);
+  .add("large", () => <Button cssClass="large">Hello</Button>)
+  .add("danger", () => <Button cssClass="danger">Hello</Button>);

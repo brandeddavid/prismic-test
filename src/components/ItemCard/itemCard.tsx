@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import React, { useState } from "react";
 import Button from "../Button/button";
 import { type Product, type PriceRule } from "../../types";
@@ -8,7 +9,7 @@ interface ItemCardProps {
   className?: string;
   addItemToCart: (item: Product) => void;
   removeItemFromCart: (item: Product) => void;
-  isDiscounted: boolean;
+  isDiscounted?: boolean;
   productDiscount?: PriceRule | null;
 }
 
