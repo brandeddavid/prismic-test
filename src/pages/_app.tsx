@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
     <StoreProvider>
       <PricingRulesProvider>
         <>
-          <div className="sticky top-0">
+          <div className="mb-20">
             <NavBar />
           </div>
           <Component {...pageProps} />

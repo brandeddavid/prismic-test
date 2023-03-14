@@ -16,15 +16,15 @@ const NavBar = (): JSX.Element => {
   return (
     <>
       <nav
-        className="border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-900"
+        className="md:mb-14 border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-900 fixed top-0 left-0 right-0"
         data-testid="navbar"
       >
         <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <a href="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
               Prismic Store
             </span>
-          </a>
+          </Link>
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul className="flex flex-col p-4 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-gray-800 md:bg-gray-900 border-gray-700">
               <li>
