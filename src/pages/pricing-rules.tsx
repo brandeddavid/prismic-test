@@ -1,4 +1,4 @@
-import Button from "@/components/Button/button";
+import Button from "../components/Button/button";
 import React, { useContext, useState } from "react";
 import { PricingRulesContext } from "../context/pricingRulesContext";
 import PricingRulesDialog from "../components/PricingRulesDialog/pricingRulesDialog";
