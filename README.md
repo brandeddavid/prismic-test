@@ -86,6 +86,7 @@ npm run test -- ./src/helpers/calculateCartTotal.test.ts
 ```
 
 ## Development stats
+
 Here are some important repo stats giving info on time spent on project down to time spent per file. Note this is time spent only spent on the editor.
 [Wakatime Stats](https://wakatime.com/projects/prismic-test)
 
@@ -93,10 +94,10 @@ Here are some important repo stats giving info on time spent on project down to 
 
 <img width="1440" alt="Screenshot 2023-03-14 at 09 17 16" src="https://user-images.githubusercontent.com/8037062/224912901-446f39a8-78d0-4fd1-980e-7bc9e66afbcc.png">
 
-
 ## Improvements to make
-1. Improve responsiveness. 
+
+1. Improve responsiveness.
    Pages currently been build with responsiveness in mind but the are some screens that can do with some improvements. These currently include extra small and extra large screens.
 2. Integrate cypress tests.
-   Cypress would be a great integration to the application for end to end testing of some of the features. 
+   Cypress would be a great integration to the application for end to end testing of some of the features.
 3. Implement search in the store page.

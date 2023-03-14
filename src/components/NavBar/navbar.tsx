@@ -46,7 +46,7 @@ const NavBar = (): JSX.Element => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/pricing-rules"
                   className="block py-2 pl-3 pr-4 rounded md:border-0 md:p-0 text-gray-400 md:hover:text-white hover:bg-gray-700 hover:text-white md:hover:bg-transparent"
                 >
                   Pricing Rules

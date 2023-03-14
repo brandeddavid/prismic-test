@@ -183,7 +183,16 @@ const PricingRulesDialog = ({
                                 </Button>
                               </div>
                               <div className="grow ml-5">
-                                <Button cssClass="large" type="submit">
+                                <Button
+                                  cssClass="large"
+                                  type="submit"
+                                  disabled={
+                                    !ruleQuantity ||
+                                    Number(ruleQuantity) === 0 ||
+                                    !discountedPrice ||
+                                    Number(discountedPrice) === 0
+                                  }
+                                >
                                   Save
                                 </Button>
                               </div>

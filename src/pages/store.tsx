@@ -50,7 +50,6 @@ const Store = (): JSX.Element => {
 
   return (
     <>
-      <div className="text-3xl font-bold m-5">Store</div>
       {(!storeItems || storeItems.length === 0) && (
         <div className="text-red-500 font-bold m-5">No store products</div>
       )}
