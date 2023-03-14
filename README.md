@@ -88,7 +88,7 @@ npm run test -- ./src/helpers/calculateCartTotal.test.ts
 ## Development stats
 
 Here are some important repo stats giving info on time spent on project down to time spent per file. Note this is time spent only spent on the editor.
-[Wakatime Stats](https://wakatime.com/projects/prismic-test)
+[Wakatime Stats](https://wakatime.com/@brandeddavid/projects/awkoipudpl?start=2023-03-08&end=2023-03-14)
 
 <img width="1440" alt="Screenshot 2023-03-14 at 09 17 05" src="https://user-images.githubusercontent.com/8037062/224912864-4f3fa94d-13df-423e-8fa0-731985eda044.png">
 
