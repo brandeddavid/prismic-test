@@ -5,6 +5,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { type Product } from "../../types";
 import { StoreContext } from "../../context/storeContext";
 import { PricingRulesContext } from "../../context/pricingRulesContext";
+import calculateItemTotal from "../../helpers/calculateItemTotal";
 import calculateCartTotal from "../../helpers/calculateCartTotal";
 import Button from "../Button/button";
 
@@ -21,11 +22,7 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
     (storeItem: Product) => storeItem.totalInCart > 0
   );
 
-  const cartTotal = itemsInCart.reduce((acc: number, item: Product) => {
-    const cartTotal: number = calculateCartTotal(item, pricingRules);
-
-    return acc + cartTotal;
-  }, 0);
+  const cartTotal = calculateCartTotal(itemsInCart, pricingRules);
 
   const removeFromCart = (item: Product): void => {
     const storeItemsCopy = [...storeItems];
@@ -125,7 +122,7 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
                                         <p className="ml-4">
                                           <>
                                             $
-                                            {calculateCartTotal(
+                                            {calculateItemTotal(
                                               item,
                                               pricingRules
                                             )}
