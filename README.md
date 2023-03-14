@@ -34,6 +34,9 @@ The solution has been implemented using the following technologies and libraries
 4. ContextAPI.
 5. React Hooks.
 6. Storybook.
+7. Jest.
+8. React Testing Library.
+9. Tailwindcss
 
 ### Storage and state management
 
@@ -45,4 +48,31 @@ Storybook has been used to document and test components and pages in isolation f
 
 https://user-images.githubusercontent.com/8037062/224883566-ff3d983e-6f02-45ea-9df2-e9b64dea5c36.mov
 
-This allows us to test all states a component or page can be without hooking some logic to it, just pass in required props.
+This allows us to test all states a component or page can be without hooking some logic to it, just pass in required props. To run story book, use the command
+
+```
+npm run storybook
+```
+
+### Running tests
+
+The application uses Jest and react testing libraries for unit test. To run tests, run this command:
+
+```
+npm run test
+```
+
+## Development stats
+Here are some important repo stats giving info on time spent on project down to time spent per file. Note this is time spent only spent on the editor.
+[Wakatime Stats](https://wakatime.com/projects/prismic-test)
+
+<img width="1440" alt="Screenshot 2023-03-14 at 09 17 05" src="https://user-images.githubusercontent.com/8037062/224912864-4f3fa94d-13df-423e-8fa0-731985eda044.png">
+
+<img width="1440" alt="Screenshot 2023-03-14 at 09 17 16" src="https://user-images.githubusercontent.com/8037062/224912901-446f39a8-78d0-4fd1-980e-7bc9e66afbcc.png">
+
+
+## Improvements to make
+1. Improve responsiveness. 
+   Pages currently been build with responsiveness in mind but the are some screens that can do with some improvements. These currently include extra small and extra large screens.
+2. Integrate cypress tests.
+   Cypress would be a great integration to the application for end to end testing of some of the features. 
