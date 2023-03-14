@@ -11,6 +11,7 @@ const CartCount = ({ count, className }: CartCountProps): JSX.Element => {
       className={`text-xs bg-gray-700 rounded-full w-4 justify-center text-center text-black-700  ${
         className ?? ""
       }`}
+      data-testid="cart-count"
     >
       {count}
     </div>

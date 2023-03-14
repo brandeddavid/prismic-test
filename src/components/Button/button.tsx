@@ -6,6 +6,7 @@ interface ButtonProps {
   disabled?: boolean;
   type: "button" | "submit" | "reset" | undefined;
   cssClass: string;
+  testId?: string;
 }
 
 const getButtonClassName = (cssClass: string): string => {
@@ -42,12 +43,14 @@ const Button = ({
   disabled,
   type,
   cssClass,
+  testId,
 }: ButtonProps): JSX.Element => (
   <button
     className={getButtonClassName(cssClass)}
     onClick={onClick}
     disabled={disabled}
     type={type}
+    data-testid={testId}
   >
     {children}
   </button>
@@ -58,6 +61,7 @@ Button.defaultProps = {
   disabled: false,
   cssClass: "primary",
   type: "button",
+  testId: "",
 };
 
 export default Button;

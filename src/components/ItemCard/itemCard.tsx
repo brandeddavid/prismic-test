@@ -32,6 +32,7 @@ const ItemCard = ({
         className={`flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 ${
           className ?? ""
         }`}
+        data-testid="item-card"
       >
         <img
           className="object-cover w-full mr-5 rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"

@@ -81,7 +81,7 @@ const PricingRulesDialog = ({
   }, []);
 
   return (
-    <>
+    <div data-testid="pricing-rules-dialog">
       <Transition.Root show={show} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={setOpen}>
           <Transition.Child
@@ -199,7 +199,7 @@ const PricingRulesDialog = ({
           </div>
         </Dialog>
       </Transition.Root>
-    </>
+    </div>
   );
 };
 

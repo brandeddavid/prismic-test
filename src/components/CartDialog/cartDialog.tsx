@@ -59,7 +59,10 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
           </Transition.Child>
 
-          <div className="fixed inset-0 overflow-hidden">
+          <div
+            className="fixed inset-0 overflow-hidden"
+            data-testid="cart-dialog"
+          >
             <div className="absolute inset-0 overflow-hidden">
               <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
                 <Transition.Child
@@ -166,6 +169,7 @@ const CartDialog = ({ show, setOpen }: CartDialogueProps): JSX.Element => {
                           <Button
                             cssClass="large"
                             disabled={itemsInCart.length === 0}
+                            testId="checkout-button"
                           >
                             Checkout
                           </Button>
