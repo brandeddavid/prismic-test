@@ -62,7 +62,7 @@ The application uses Jest and react testing libraries for unit test. To run test
 npm run test
 ```
 
-To run all the test cases given in the instructions documentdirectly,
+To run all the test cases given in the instructions document directly,
 | Input | Expected output |
 | -------- | --------------- |
 | "" | 0 |
