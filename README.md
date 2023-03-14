@@ -1,6 +1,6 @@
 # Prismic Take Home Assignment
 
-Welcome to my implemntation of the take away assignment. Find instructions here: [Instructions](INSTRICTIONS.md)
+Welcome to my implemntation of the take away assignment. Find instructions here: [Instructions](INSTRUCTIONS.md)
 
 ## Getting Started
 
