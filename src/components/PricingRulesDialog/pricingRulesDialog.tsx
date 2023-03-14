@@ -157,10 +157,20 @@ const PricingRulesDialog = ({
                                 }}
                               />
                             </label>
-                            <div className="mt-20">
-                              <Button type="submit" cssClass="large">
-                                Save
-                              </Button>
+                            <div className="mt-20 flex justify-between">
+                              <div className="grow mr-5">
+                                <Button
+                                  cssClass="danger"
+                                  disabled={pricingRule === null}
+                                >
+                                  Remove
+                                </Button>
+                              </div>
+                              <div className="grow ml-5">
+                                <Button cssClass="large" type="submit">
+                                  Save
+                                </Button>
+                              </div>
                             </div>
                           </form>
                         </div>

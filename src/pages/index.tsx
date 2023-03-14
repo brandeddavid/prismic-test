@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Hero from "../components/Hero/hero";
 
 export default function Home(): JSX.Element {
   return (
@@ -10,7 +11,9 @@ export default function Home(): JSX.Element {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="text-3xl font-bold underline m-5"></main>
+      <main className="h-full flex justify-center text-center">
+        <Hero />
+      </main>
     </>
   );
 }
